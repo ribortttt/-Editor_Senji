@@ -1,9 +1,9 @@
 document.querySelector(".Reels-vid").classList.add("loaded");{
 
     const video = document.getElementById("my-video");
+    const container = document.querySelector(".Reels-vid");
     const playBtn = document.getElementById("play-btn");
     const frames = document.querySelectorAll("iframe");
-    const container = document.querySelector(".Reels-vid");
     const cards = document.querySelectorAll(".card");
 
     video.addEventListener("loadeddata", () => {
