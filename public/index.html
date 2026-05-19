@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <link rel="stylesheet" href="senji.css">
-    <script src="Senji.js" defer></script>
+    <script src="Senji.js"></script>
     <title>Editor Senji</title>
     <link rel="icon" type="image/jpg" href="images/Senji-logo.jpg">
 </head>
 <body>
-  <div id="root"></div>
   
+  <div id="root"></div>
   <div class="whole-frame">
 
     <div class="top-white">
@@ -26,14 +26,20 @@
     <i class="fa-solid fa-arrow-right"></i>
   </a>
 
+
     <div class="line"></div>
 
-    <div class="Reels-vid">
-      <video controls muted autoplay loop
-      controlsList="nodownload nofullscreen noplaybackrate" 
+    <div class="Reels-vid animate">
+    <div class="video-loader"></div>
+      <video id="my-video"  
+      playsinline 
+      autoplay 
+      loop
       disablePictureInPicture>
-        <source src="Videos/senji-reel.mp4" type="video/mp4"></video>
+      <source src="Videos/senji-reel.mp4" type="video/mp4"></video>
 
+      
+      <button class="play-btn" id="play-btn">❚❚</button>
     </div>
   </section>
 
@@ -238,35 +244,35 @@
 
     <div class="grid">
 
-    <iframe src="https://www.youtube.com/embed/Szt_z3MAs0Y?si=PoJZB3h2JW_QwAr_&amp;start=3" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/Szt_z3MAs0Y?si=PoJZB3h2JW_QwAr_&amp;start=3" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/YiKnkDTM1zE?si=fi97mCuhbxntZfIJ" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/YiKnkDTM1zE?si=fi97mCuhbxntZfIJ" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/Hw7qUKDW-G0?si=CFr6ovUnFCTdBC77" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/Hw7qUKDW-G0?si=CFr6ovUnFCTdBC77" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-    <iframe src="https://www.youtube.com/embed/-xPz04qgNXk?si=_mfzFXX5veDr0rKe" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/-xPz04qgNXk?si=_mfzFXX5veDr0rKe" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/GDoomuFw-QU?si=LRYzslid2ocfBc8d" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/GDoomuFw-QU?si=LRYzslid2ocfBc8d" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/PoPqP9455PQ?si=pz6-_Ggzlikp7T4T" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/PoPqP9455PQ?si=pz6-_Ggzlikp7T4T" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
     
-    <iframe src="https://www.youtube.com/embed/MVn6wodTj8k?si=aVNpkn9dhYF-Xvaz" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/MVn6wodTj8k?si=aVNpkn9dhYF-Xvaz" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/XVqnl8ViVhA?si=YDeaZNoj3k-V08Ih" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/XVqnl8ViVhA?si=YDeaZNoj3k-V08Ih" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/NvpSw5Ticlw?si=2kp0MENaLIMW-zLC" 
+    <iframe loading="lazy" src="https://www.youtube.com/embed/NvpSw5Ticlw?si=2kp0MENaLIMW-zLC" 
     title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
     gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -335,7 +341,8 @@
   </section>
 
   <footer>Copyright 2026. Senji Editor - All Rights Reserved</footer>
-
+  
+  <script src="Senji.js"></script>
   </div>
 </body>
 </html>
