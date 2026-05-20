@@ -13,10 +13,10 @@ document.querySelector(".Reels-vid").classList.add("loaded");{
 
     if(video.paused){
         video.play();
-        playBtn.textContent = "❚❚";
+        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
     } else {
         video.pause();
-        playBtn.textContent = "▶";
+        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
     }
 
 });
@@ -37,7 +37,6 @@ frames.forEach((frame, index) => {
 });
 
 cards.forEach(card => {
-
     card.addEventListener("mousemove", (e) => {
 
         const rect = card.getBoundingClientRect();
