@@ -3,23 +3,77 @@ document.querySelector(".Reels-vid").classList.add("loaded");{
     const video = document.getElementById("my-video");
     const container = document.querySelector(".Reels-vid");
     const playBtn = document.getElementById("play-btn");
+    const volumeBtn = document.getElementById("volume-btn");
+    const volumeSlider = document.getElementById("volume-slider");
     const frames = document.querySelectorAll("iframe");
     const cards = document.querySelectorAll(".card");
+
+    let hideTimeout
 
     video.addEventListener("loadeddata", () => {
     container.classList.add("loaded");
 });
-    playBtn.addEventListener("click", () => {
+
+function showIcon(type){
+
+    if(type === "play"){
+        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    } else {
+        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    }
+    playBtn.classList.add("show");
+    clearTimeout(hideTimeout);
+    hideTimeout = setTimeout(() => {
+        playBtn.classList.remove("show");
+    }, 800);
+}
+
+video.addEventListener("click", () => {
 
     if(video.paused){
         video.play();
-        playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        showIcon("pause");
     } else {
         video.pause();
-        playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        showIcon("play");
+    }
+});
+
+volumeSlider.addEventListener("input", () => {
+    video.muted = false;
+    video.volume = volumeSlider.value;
+
+    if(video.volume == 0){
+        volumeBtn.innerHTML =
+        '<i class="fa-solid fa-volume-xmark"></i>';
+    } else {
+        volumeBtn.innerHTML =
+        '<i class="fa-solid fa-volume-high"></i>';
+    }
+});
+
+volumeBtn.addEventListener("click", () => {
+
+    video.muted = !video.muted;
+
+    if(video.muted){
+
+        volumeBtn.innerHTML =
+        '<i class="fa-solid fa-volume-xmark"></i>';
+
+        volumeSlider.value = 0;
+
+    } else {
+
+        volumeBtn.innerHTML =
+        '<i class="fa-solid fa-volume-high"></i>';
+
+        volumeSlider.value = 1;
+        video.volume = 1;
     }
 
 });
+
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach(entry => {
