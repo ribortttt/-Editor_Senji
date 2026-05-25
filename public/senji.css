@@ -613,7 +613,7 @@ video{
   color: #e5e5ea;
 }
 .carousel{
-  overflow-x: auto;
+  overflow: hidden;
   touch-action: none;
   display: flex;
 
@@ -642,7 +642,7 @@ video{
   display: flex;
   gap: 5em;
   animation: spin 50s infinite linear;
-  padding-right: 5em;
+  padding-right: 6em;
 }
 
 .client{ 
@@ -653,8 +653,10 @@ video{
 }
 
 @keyframes spin {
-  from{translate: 0;}
-  to{translate: -100%;}
+  from{
+    transform: translateX(0);}
+  to{
+    transform: translateX(calc(-100%));}
 }
 
 .avatar{
