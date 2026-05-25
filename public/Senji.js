@@ -7,6 +7,7 @@ document.querySelector(".Reels-vid").classList.add("loaded");{
     const volumeSlider = document.getElementById("volume-slider");
     const frames = document.querySelectorAll("iframe");
     const cards = document.querySelectorAll(".card");
+    const aboutContainer = document.querySelector(".about-container");
 
     let hideTimeout
 
@@ -122,4 +123,13 @@ cards.forEach(card => {
 
 });
 
+window.addEventListener("scroll", () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  const containerTop = aboutContainer.getBoundingClientRect().top;
+
+  if (containerTop < triggerBottom) {
+    aboutContainer.classList.add("show");
+  }
+});
 };
